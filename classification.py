@@ -10,8 +10,8 @@ from keras import layers, models, utils
 X_train = X_train.astype('float32') / 255.0
 X_test = X_test.astype('float32') / 255.0
 
-X_train.reshape(-1, 28, 28, 1)
-X_test.reshape(-1, 28, 28, 1)
+X_train = X_train.reshape(-1, 28, 28, 1)
+X_test = X_test.reshape(-1, 28, 28, 1)
 
 
 y_train = utils.to_categorical(y_train, 10)
@@ -38,7 +38,7 @@ model.compile(
 
 history = model.fit(
   X_train, y_train, 
-  epochs=10,
+  epochs=25,
   batch_size=32
 )
 
